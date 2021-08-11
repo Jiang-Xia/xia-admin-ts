@@ -2,9 +2,9 @@
  * @Author: 酱
  * @LastEditors: 酱
  * @Date: 2021-03-24 09:43:12
- * @LastEditTime: 2021-08-06 14:40:34
+ * @LastEditTime: 2021-08-11 15:52:27
  * @Description:
- * @FilePath: \xia-admin\src\api\config.ts
+ * @FilePath: \xia-admin-ts\src\api\config.ts
  */
 interface config{
   [propName: string]: String;

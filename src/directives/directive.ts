@@ -2,37 +2,37 @@
  * @Author: 酱
  * @LastEditors: 酱
  * @Date: 2021-07-05 10:17:39
- * @LastEditTime: 2021-08-09 16:53:49
+ * @LastEditTime: 2021-08-11 16:02:05
  * @Description:
- * @FilePath: \xia-admin\src\directives\directive.ts
+ * @FilePath: \xia-admin-ts\src\directives\directive.ts
  */
 import { ElMessage } from 'element-plus'
 import LoadingImg from '@/assets/img/common/img-loading.gif'
 export const watermark = {
-  beforeMount(el, binding, vnode, oldVnode) {
+  beforeMount(el:any, binding:any, vnode:any, oldVnode:any,) {
   },
-  mounted(el, binding, vnode, oldVnode) {
+  mounted(el:any, binding:any, vnode:any, oldVnode:any) {
     // console.log(el, binding, vnode, oldVnode)
     el.innerText = '<p>自定义指令:我是水印</p>'
   },
-  beforeUpdate(el, binding, vnode, oldVnode) {
+  beforeUpdate(el:any, binding:any, vnode:any, oldVnode:any) {
 
   },
-  updated(el, binding, vnode, oldVnode) {
+  updated(el:any, binding:any, vnode:any, oldVnode:any) {
 
   },
-  beforeUnmount(el, binding, vnode, oldVnode) {
+  beforeUnmount(el:any, binding:any, vnode:any, oldVnode:any) {
 
   },
-  unmounted(el, binding, vnode, oldVnode) {
+  unmounted(el:any, binding:any, vnode:any, oldVnode:any) {
 
   }
 }
 /* 使用的方法MDN已弃用可能导致浏览器不兼容 */
 export const copy = {
-  beforeMount(el, binding, vnode, oldVnode) {
+  beforeMount(el:any, binding:any, vnode:any, oldVnode:any) {
   },
-  mounted(el, binding) {
+  mounted(el:any, binding:any) {
     const { value } = binding
     el.$value = value
     el.handler = () => {
@@ -45,7 +45,7 @@ export const copy = {
       // 动态创建 textarea 标签
       const textarea = document.createElement('textarea')
       // 将该 textarea 设为 readonly 防止 iOS 下自动唤起键盘，同时将 textarea 移出可视区域
-      textarea.readOnly = 'readonly'
+      textarea.readOnly = true
       textarea.style.position = 'absolute'
       textarea.style.left = '-9999px'
       // 将要 copy 的值赋给 textarea 标签的 value 属性
@@ -65,23 +65,23 @@ export const copy = {
     // 绑定点击事件，就是所谓的一键 copy 啦
     el.addEventListener('click', el.handler)
   },
-  beforeUpdate(el, binding, vnode, oldVnode) {},
+  beforeUpdate(el:any, binding:any, vnode:any, oldVnode:any) {},
   // 当传进来的值更新的时候触发
-  updated(el, { value }) {
+  updated(el:any, { value }) {
     el.$value = value
   },
-  beforeUnmount(el, binding, vnode, oldVnode) {},
+  beforeUnmount(el:any, binding:any, vnode:any, oldVnode:any) {},
   // 指令与元素解绑的时候，移除事件绑定
-  unmounted(el) {
+  unmounted(el:any) {
     el.removeEventListener('click', el.handler)
   }
 }
 
 // 图片懒加载
 export const lazyload = {
-  beforeMount(el, binding, vnode, oldVnode) {
+  beforeMount(el:any, binding:any, vnode:any, oldVnode:any) {
   },
-  mounted(el, binding) {
+  mounted(el:any, binding:any) {
     const src = el.src
     el.setAttribute('src', LoadingImg)
     const wHeight = window.innerHeight
@@ -106,9 +106,9 @@ export const lazyload = {
     }
     window.addEventListener('scroll', el.handler, true)
   },
-  beforeUnmount(el, binding, vnode, oldVnode) {},
+  beforeUnmount(el:any, binding:any, vnode:any, oldVnode:any) {},
   // 指令与元素解绑的时候，移除事件绑定
-  unmounted(el) {
+  unmounted(el:any) {
     window.removeEventListener('scroll', el.handler)
   }
 }

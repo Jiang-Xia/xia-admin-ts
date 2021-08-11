@@ -1,8 +1,16 @@
+/*
+ * @Author: 酱
+ * @LastEditors: 酱
+ * @Date: 2021-08-09 17:27:59
+ * @LastEditTime: 2021-08-11 15:51:59
+ * @Description: 
+ * @FilePath: \xia-admin-ts\src\utils\storage.ts
+ */
 const SALT = ''
 
 const storage = {
   local: {
-    get(key) {
+    get(key:string) {
       const strValue = localStorage.getItem(SALT + key)
       if (strValue && strValue !== 'undefined') {
         return JSON.parse(strValue)
@@ -10,11 +18,11 @@ const storage = {
         return null
       }
     },
-    set(key, jsonValue) {
+    set(key:string, jsonValue:any) {
       const strValue = JSON.stringify(jsonValue)
       localStorage.setItem(SALT + key, strValue)
     },
-    remove(key) {
+    remove(key:string) {
       localStorage.removeItem(SALT + key)
     },
     removeAll() {
@@ -22,7 +30,7 @@ const storage = {
     }
   },
   session: {
-    get(key) {
+    get(key:string) {
       const strValue = sessionStorage.getItem(SALT + key)
       if (strValue && strValue !== 'undefined') {
         return JSON.parse(strValue)
@@ -30,11 +38,11 @@ const storage = {
         return null
       }
     },
-    set(key, jsonValue) {
+    set(key:string, jsonValue:any) {
       const strValue = JSON.stringify(jsonValue)
       sessionStorage.setItem(SALT + key, strValue)
     },
-    remove(key) {
+    remove(key:string) {
       sessionStorage.removeItem(SALT + key)
     },
     removeAll() {

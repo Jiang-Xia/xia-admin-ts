@@ -2,9 +2,9 @@
  * @Author: 酱
  * @LastEditors: 酱
  * @Date: 2021-07-01 20:03:04
- * @LastEditTime: 2021-07-27 15:48:45
+ * @LastEditTime: 2021-08-11 16:05:43
  * @Description:
- * @FilePath: \xia-admin\src\layout\index.vue
+ * @FilePath: \xia-admin-ts\src\layout\index.vue
 -->
 <template>
   <el-container class="xia-app-container">

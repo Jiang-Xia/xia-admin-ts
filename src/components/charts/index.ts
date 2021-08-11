@@ -2,9 +2,9 @@
  * @Author: 酱
  * @LastEditors: 酱
  * @Date: 2021-07-28 22:02:56
- * @LastEditTime: 2021-08-03 17:20:44
+ * @LastEditTime: 2021-08-11 15:57:36
  * @Description:
- * @FilePath: \xia-admin\src\components\charts\indexts
+ * @FilePath: \xia-admin-ts\src\components\charts\index.ts
  */
 import { defineAsyncComponent } from 'vue'
 // 异步加载文件内容
@@ -18,7 +18,7 @@ function getComponents() {
   return components
 }
 // 自动注册组件
-export const asyncComponent = function(app) {
+export const asyncComponent = function(app:any) {
   const modules = getModules()// 获取到组件模块内容
   const components = getComponents()// 获取到文件组件信息
   // console.log(modules, components)
